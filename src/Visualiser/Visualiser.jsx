@@ -1,9 +1,12 @@
 import React from "react";
 import './Visualiser.css';
-import { mergeSort } from "../Algorithms/MergeSort";
 import { getBubbleSort } from "../Algorithms/BubbleSort";
 import { getSelectionSort } from "../Algorithms/SelectionSort";
 import ControlPanel from "/Users/tuteredurie/algorithm-visualiser/src/Components/ControlPanel.jsx";
+
+
+/*********** Intial concept of visualier and testing method came from the following tutorial:
+ *  https://www.youtube.com/watch?v=pFXYym4Wbkc&ab_channel=Cl%C3%A9mentMihailescu ***********************/
 
 class Visualiser extends React.Component {
     constructor(props) {
@@ -30,17 +33,20 @@ class Visualiser extends React.Component {
         const numBars = document.getElementsByClassName('numBar');
         for (let i = 0; i<numBars.length; i++) {
           numBars[i].style.backgroundColor = '#b8b8c7';
-        }       
+        }     
+        
+        const numBarLabels = document.getElementsByClassName('numBarLabel');
+        for (let i = 0; i<numBarLabels.length; i++) {
+          numBarLabels[i].innerHTML = listOfNums[i];
+        } 
     }
 
 
     bubbleSort = async () => {
-
       let [animations] = getBubbleSort(this.state.listOfNums);
       var test = getBubbleSort(this.state.listOfNums);
       var test1 = test[1];
-      console.log(test1);//  FOR DEBUGGING
-      // console.log(test[0]);
+      // console.log(test1);//  FOR DEBUGGING
 
       for (let i = 0; i<animations.length; i++) {
         //animation array is organised into groups of 4
@@ -86,7 +92,7 @@ class Visualiser extends React.Component {
       let [animations] = getSelectionSort(this.state.listOfNums);
       var test = getSelectionSort(this.state.listOfNums);
       var test1 = test[1];
-      console.log(test1);//  FOR DEBUGGING
+      // console.log(test1);//  FOR DEBUGGING
       // console.log(test[0]);
       var complete = true;
       const numBars = document.getElementsByClassName('numBar');
@@ -153,8 +159,7 @@ class Visualiser extends React.Component {
           console.log('Expected array: ' + defaultSortedArray);
           console.log('Bubble sorted array: ' + BubbleSortedArray);
           console.log('Selection sorted array: ' + SelectionSortedArray);
-        }
-        
+        }    
       }
     }
 
@@ -181,10 +186,6 @@ class Visualiser extends React.Component {
                   key={index}
                   style = {{height: `${value}px`}}> <label className="numBarLabel"> {value}  </label></div> //had {value}
               ))}
-              {/* <button onClick={() => this.resetListOfNums()}> Generate a new list of numbers </button>
-              <button onClick={() => this.bubbleSort()}> Bubble Sort </button>
-              <button onClick={() => this.selectionSort()}> Selection Sort </button>
-              <button onClick={() => this.testAlgorithms()}> Test Algorithms </button> */}
             </div>
           </React.Fragment>
         );

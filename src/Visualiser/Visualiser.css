@@ -1,29 +1,21 @@
 
 /****** Control Panel *****/
 .controlPanel {
-    top: 0;
-    overflow: hidden;
-    font-size: 16px;
-    min-height: 60px;
-    text-align: center;
+    min-height: 70px;
     background-color: rgb(0, 0, 0);
-    /* margin: 10px; */
   
   }
   
   .labelHeader {
     color: rgb(244, 247, 250);
     margin-right: 100px;
-  }
-
-  .labelHeader{
     font-size: 30px;
     font-weight: 600;
     padding-top: 50px;
   }
 
   #randomise, #BubbleSort, #SelectionSort, #testAlgs {
-    margin: 10px;
+    margin: 12px;
   }
   
   button {
@@ -32,8 +24,8 @@
     color: rgb(245, 242, 242);
     cursor: pointer;
     text-transform: uppercase;
-    background-color: #222;
-    transition: 0.2s ease-in;
+    background-color: rgb(19, 19, 19);
+    transition: 0.1s ease-in;
     border: 2px solid #eadf0a;
   }
   
@@ -50,34 +42,22 @@
     padding: 1rem;
     padding-left: 2rem;
     display: flex;
-    align-items: flex-start;
     flex: 0.5;
     margin: 1px;
-    /* display: inline-block; */
-    position: relative;
     background-color: #b8b8c7;
     transition: all .4s ease-in;
-    /* width: 50px; */
-    /* resize: horizontal; */
-    align-content: center;
   }
   
 
   .numsContainer {
-    /* position:absolute; */
-    /* left: 100px; */
-    /* flex-direction: column; */
-    padding-left: 20vw;
-    padding-right: 20vw;
-    /* padding: 1rem; */
+  padding-left: 20vw;
+  padding-right: 20vw;
   display: flex;
   min-height: 80vh;
   align-items: flex-start;
 }
 
 body {
-    top: 0;
-  margin: 0;
   width: auto;
   display: flex;
   flex-direction: column;
