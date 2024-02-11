@@ -2,7 +2,7 @@ import React from "react";
 import './Visualiser.css';
 import { getBubbleSort } from "../Algorithms/BubbleSort";
 import { getSelectionSort } from "../Algorithms/SelectionSort";
-import ControlPanel from "/Users/tuteredurie/algorithm-visualiser/src/Components/ControlPanel.jsx";
+import ControlPanel from "../Components/ControlPanel.jsx";
 
 
 /*********** Intial concept of visualier and testing method came from the following tutorial:
